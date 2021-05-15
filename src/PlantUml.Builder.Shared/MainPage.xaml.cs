@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,9 +24,26 @@ namespace PlantUml.Builder
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
+        public MainViewModel ViewModel { get; set; }
+
         public MainPage()
         {
+            ViewModel = new();
             this.InitializeComponent();
+        }
+    }
+
+    public class MainViewModel : ObservableObject
+    {
+        public MainViewModelCommands Commands { get; } = new();
+
+        public class MainViewModelCommands
+        {
+            public RelayCommand NewProject { get; } = new(() =>
+            {
+
+            });
         }
     }
 }

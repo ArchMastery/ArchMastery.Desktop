@@ -5,12 +5,14 @@
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <AssemblyVersion>2021.0512.0.40509</AssemblyVersion>
-    <FileVersion>2021.0512.0.40509</FileVersion>
+    <AssemblyVersion>2021.0514.0.43068</AssemblyVersion>
+    <FileVersion>2021.0514.0.43068</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Uno.WinUI.Skia.Wpf" Version="3.6.6" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.6.6" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
+    <PackageReference Include="PlantUml.Reflector" Version="2021.514.0.42598" />
+    <PackageReference Include="Uno.WinUI.Skia.Wpf" Version="3.7.4" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Fonts\uno-fluentui-assets.ttf" />

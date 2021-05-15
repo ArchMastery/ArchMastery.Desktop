@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "PlantUml.Builder.Skia.Gtk": {
+      "commandName": "Project"
+    }
+  }
+}

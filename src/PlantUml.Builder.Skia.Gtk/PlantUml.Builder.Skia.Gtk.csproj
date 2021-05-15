@@ -4,8 +4,8 @@
     <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>2021.0512.0.40509</AssemblyVersion>
-    <FileVersion>2021.0512.0.40509</FileVersion>
+    <AssemblyVersion>2021.0512.4.41821</AssemblyVersion>
+    <FileVersion>2021.0512.4.41821</FileVersion>
   </PropertyGroup>
   <ItemGroup Condition="exists('..\PlantUml.Builder.UWP')">
     <EmbeddedResource Include="..\PlantUml.Builder.UWP\Package.appxmanifest" LogicalName="Package.appxmanifest" />
@@ -16,10 +16,13 @@
     <UpToDateCheckInput Include="..\PlantUml.Builder.Shared\**\*.xaml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="GtkSharp" Version="3.24.24.34" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
-    <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="3.6.6" />
-    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.6.6" Condition="'$(Configuration)'=='Debug'" />
+    <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
+    <PackageReference Include="PlantUml.Reflector" Version="2021.514.0.42598" />
+    <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="3.7.4" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
   <Import Project="..\PlantUml.Builder.Shared\PlantUml.Builder.Shared.projitems" Label="Shared" />
 </Project>

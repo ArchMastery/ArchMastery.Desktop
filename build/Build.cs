@@ -55,17 +55,24 @@ class Build : NukeBuild
     Target Restore => _ => _
         .Executes(() =>
         {
-            DotNetRestore(s => s
-                .SetProjectFile(Solution));
+            //DotNetRestore(s => s
+            //    .SetProjectFile(Solution));
+            MSBuildTasks.MSBuild(s => s
+                .SetConfiguration(Configuration)
+                .SetRestore(true)
+                .SetTargets("restore")
+                .SetProjectFile(Solution)
+            );
         });
 
     Target Compile => _ => _
         .DependsOn(Restore)
         .Executes(() =>
         {
-            DotNetBuild(s =>
+            MSBuildTasks.MSBuild(s =>
                     s.SetConfiguration(Configuration)
-                        .EnableNoRestore()
+                        //.EnableNoRestore()
+                        .SetRestore(false)
                         .SetProjectFile(Solution)
             //.SetAssemblyVersion(GitVersion.AssemblySemVer)
             //.SetFileVersion(GitVersion.AssemblySemFileVer)

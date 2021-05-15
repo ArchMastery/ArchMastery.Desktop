@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "PlantUml.Builder.Skia.Wpf.Host": {
+      "commandName": "Project"
+    }
+  }
+}

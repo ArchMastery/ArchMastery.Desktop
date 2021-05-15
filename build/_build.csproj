@@ -7,8 +7,8 @@
     <NoWarn>CS0649;CS0169</NoWarn>
     <NukeRootDirectory>..</NukeRootDirectory>
     <NukeScriptDirectory>..</NukeScriptDirectory>
-    <AssemblyVersion>2021.0512.11.40583</AssemblyVersion>
-    <FileVersion>2021.0512.11.40583</FileVersion>
+    <AssemblyVersion>2021.0512.13.41434</AssemblyVersion>
+    <FileVersion>2021.0512.13.41434</FileVersion>
     <Configurations>Debug;Release;Nuke</Configurations>
     <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
