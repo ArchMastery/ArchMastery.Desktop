@@ -4,8 +4,9 @@
     <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
     <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <AssemblyVersion>2021.0512.4.41821</AssemblyVersion>
-    <FileVersion>2021.0512.4.41821</FileVersion>
+    <AssemblyVersion>2021.0516.1.31568</AssemblyVersion>
+    <FileVersion>2021.0516.1.31568</FileVersion>
+      <NoWarn>NU1701</NoWarn>
   </PropertyGroup>
   <ItemGroup Condition="exists('..\PlantUml.Builder.UWP')">
     <EmbeddedResource Include="..\PlantUml.Builder.UWP\Package.appxmanifest" LogicalName="Package.appxmanifest" />
@@ -17,9 +18,11 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="GtkSharp" Version="3.24.24.34" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="5.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="5.0.0" />
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="PlantUml.Reflector" Version="2021.514.0.42598" />
     <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="3.7.4" />
     <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />

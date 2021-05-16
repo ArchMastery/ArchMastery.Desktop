@@ -15,6 +15,8 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace PlantUml.Builder
 {
@@ -23,13 +25,15 @@ namespace PlantUml.Builder
     /// </summary>
     public sealed partial class App : Application
     {
+        public static IHost Host { get; private set; }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
         /// </summary>
         public App()
         {
-            InitializeLogging();
+            CreateHost();
 
             this.InitializeComponent();
 
@@ -115,14 +119,30 @@ namespace PlantUml.Builder
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            //TODO: SaveAsync application state and stop any background activity
             deferral.Complete();
+        }
+
+        private static void CreateHost()
+        {
+            InitializeLogging();
+
+            var host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
+                .ConfigureServices(services =>
+                {
+                    services.AddSingleton(InitializeLogging());
+                    services.AddLogging();
+                })
+                .ConfigureServices(Startup.ConfigureServices)
+                .Build();
+
+            Host = host;
         }
 
         /// <summary>
         /// Configures global Uno Platform logging
         /// </summary>
-        private static void InitializeLogging()
+        private static ILoggerFactory InitializeLogging()
         {
             var factory = LoggerFactory.Create(builder =>
             {
@@ -145,34 +165,34 @@ namespace PlantUml.Builder
                 builder.AddFilter("Microsoft", LogLevel.Warning);
 
                 // Generic Xaml events
-                // builder.AddFilter("Microsoft.UI.Xaml", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.VisualStateGroup", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.StateTriggerBase", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.UIElement", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.FrameworkElement", LogLevel.Trace );
+                builder.AddFilter("Microsoft.UI.Xaml", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.VisualStateGroup", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.StateTriggerBase", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.UIElement", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.FrameworkElement", LogLevel.Trace);
 
                 // Layouter specific messages
-                // builder.AddFilter("Microsoft.UI.Xaml.Controls", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.Controls.Layouter", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.Controls.Panel", LogLevel.Debug );
+                builder.AddFilter("Microsoft.UI.Xaml.Controls", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.Controls.Layouter", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.Controls.Panel", LogLevel.Debug);
 
-                // builder.AddFilter("Windows.Storage", LogLevel.Debug );
+                builder.AddFilter("Windows.Storage", LogLevel.Debug);
 
                 // Binding related messages
-                // builder.AddFilter("Microsoft.UI.Xaml.Data", LogLevel.Debug );
-                // builder.AddFilter("Microsoft.UI.Xaml.Data", LogLevel.Debug );
+                builder.AddFilter("Microsoft.UI.Xaml.Data", LogLevel.Debug);
+                builder.AddFilter("Microsoft.UI.Xaml.Data", LogLevel.Debug);
 
                 // Binder memory references tracking
-                // builder.AddFilter("Uno.UI.DataBinding.BinderReferenceHolder", LogLevel.Debug );
+                builder.AddFilter("Uno.UI.DataBinding.BinderReferenceHolder", LogLevel.Debug);
 
                 // RemoteControl and HotReload related
-                // builder.AddFilter("Uno.UI.RemoteControl", LogLevel.Information);
+                builder.AddFilter("Uno.UI.RemoteControl", LogLevel.Information);
 
                 // Debug JS interop
-                // builder.AddFilter("Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug );
+                builder.AddFilter("Uno.Foundation.WebAssemblyRuntime", LogLevel.Debug);
             });
 
-            global::Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory = factory;
+            return global::Uno.Extensions.LogExtensionPoint.AmbientLoggerFactory = factory;
         }
     }
 }

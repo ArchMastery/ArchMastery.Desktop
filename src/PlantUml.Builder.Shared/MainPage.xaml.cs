@@ -5,8 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -14,6 +13,9 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
+using PlantUml.Builder.ViewModels;
+using System.Diagnostics;
+using PlantUml.Builder.Services;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -22,28 +24,33 @@ namespace PlantUml.Builder
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage
     {
+        private MainViewModel _viewModel;
 
-        public MainViewModel ViewModel { get; set; }
+        public MainViewModel ViewModel { 
+            get => _viewModel;
+            set
+            {
+                if (value is null || value.Equals(_viewModel)) return;
+
+                _viewModel = value;
+            }
+        }
+
+        public ProjectService ProjectService { get; }
 
         public MainPage()
         {
-            ViewModel = new();
-            this.InitializeComponent();
-        }
-    }
+            ProjectService = App.Host.Services.GetService<ProjectService>();
 
-    public class MainViewModel : ObservableObject
-    {
-        public MainViewModelCommands Commands { get; } = new();
-
-        public class MainViewModelCommands
-        {
-            public RelayCommand NewProject { get; } = new(() =>
+            ProjectService.RequestExitApp += () =>
             {
+                Process.GetCurrentProcess().CloseMainWindow();
+            };
 
-            });
+            ViewModel = App.Host.Services.GetRequiredService<MainViewModel>();
+            this.InitializeComponent();
         }
     }
 }

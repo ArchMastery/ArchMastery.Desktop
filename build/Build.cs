@@ -37,7 +37,7 @@ class Build : NukeBuild
 
     [Solution] readonly Solution Solution;
     [GitRepository] readonly GitRepository GitRepository;
-    [GitVersion] readonly GitVersion GitVersion;
+    [GitVersion(Framework = "net5.0")] readonly GitVersion GitVersion;
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath TestsDirectory => RootDirectory / "tests";
@@ -58,6 +58,7 @@ class Build : NukeBuild
             //DotNetRestore(s => s
             //    .SetProjectFile(Solution));
             MSBuildTasks.MSBuild(s => s
+                .SetVerbosity(MSBuildVerbosity.Minimal)
                 .SetConfiguration(Configuration)
                 .SetRestore(true)
                 .SetTargets("restore")
@@ -69,14 +70,14 @@ class Build : NukeBuild
         .DependsOn(Restore)
         .Executes(() =>
         {
-            MSBuildTasks.MSBuild(s =>
-                    s.SetConfiguration(Configuration)
-                        //.EnableNoRestore()
-                        .SetRestore(false)
-                        .SetProjectFile(Solution)
-            //.SetAssemblyVersion(GitVersion.AssemblySemVer)
-            //.SetFileVersion(GitVersion.AssemblySemFileVer)
-            //.SetInformationalVersion(GitVersion.InformationalVersion)
+            MSBuildTasks.MSBuild(s => s
+                .SetConfiguration(Configuration)
+                .SetVerbosity(MSBuildVerbosity.Minimal)
+                .SetRestore(false)
+                .SetProjectFile(Solution)
+                .SetAssemblyVersion(GitVersion.AssemblySemVer)
+                .SetFileVersion(GitVersion.AssemblySemFileVer)
+                .SetInformationalVersion(GitVersion.InformationalVersion)
             );
         });
 
