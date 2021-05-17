@@ -18,6 +18,7 @@ namespace PlantUml.Builder.ViewModels
     public class MainViewModel : ObservableObject
     {
         private ProjectViewModel? _project;
+        private string _name = string.Empty;
 
         public MainViewModel(MainViewModelCommands commands)
         {
@@ -29,7 +30,19 @@ namespace PlantUml.Builder.ViewModels
         public ProjectViewModel? Project
         {
             get => _project;
-            set => SetProperty(ref _project, value);
+            set
+            {
+                if(SetProperty(ref _project, value))
+                {
+                    Name = value.Name;
+                }
+            }
+        }
+
+        public string Name
+        {
+            get => _name;
+            set => SetProperty(ref _name, value);
         }
     }
 }

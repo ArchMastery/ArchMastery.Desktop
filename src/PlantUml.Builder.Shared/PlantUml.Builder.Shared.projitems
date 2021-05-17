@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\ProjectService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MainViewModelCommands.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ProjectViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TextInputViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="$(MSBuildThisFileDirectory)MainPage.xaml">

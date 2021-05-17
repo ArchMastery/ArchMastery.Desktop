@@ -13,6 +13,10 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using Microsoft.Extensions.DependencyInjection;
+
+using PlantUml.Builder.ViewModels;
+
 namespace PlantUml.Builder.WPF.Host
 {
 	/// <summary>
@@ -20,11 +24,26 @@ namespace PlantUml.Builder.WPF.Host
 	/// </summary>
 	public partial class MainWindow : Window
 	{
+		MainViewModel ViewModel { get; set; }
+
 		public MainWindow()
 		{
 			InitializeComponent();
-	
-			root.Content = new global::Uno.UI.Skia.Platform.WpfHost(Dispatcher, () => new PlantUml.Builder.App());
+
+			var wpfHost = new global::Uno.UI.Skia.Platform.WpfHost(Dispatcher, () => new Builder.App());
+			ViewModel = Builder.App.Host.Services.GetService<MainViewModel>();
+			ViewModel.PropertyChanged += ViewModel_PropertyChanged;
+			root.Content = wpfHost;
 		}
-	}
+
+        private void ViewModel_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+			switch (e.PropertyName)
+			{
+				case nameof(MainViewModel.Name):
+					Title = "PUML Builder - " + ViewModel.Name ?? "<none>";
+					break;
+			}
+		}
+    }
 }

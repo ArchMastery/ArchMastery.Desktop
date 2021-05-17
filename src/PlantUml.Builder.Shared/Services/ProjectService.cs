@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.UI.Xaml.Controls;
 
 using Newtonsoft.Json;
 
@@ -23,6 +24,8 @@ namespace PlantUml.Builder.Services
     public class ProjectService
     {
         public DialogService DialogService { get; }
+        public bool HasProject(ProjectViewModel? project) => project is not null;
+
         public event Action? RequestExitApp;
 
         public ProjectService(DialogService dialogService)
@@ -30,64 +33,63 @@ namespace PlantUml.Builder.Services
             DialogService = dialogService;
         }
 
-        public void ExecuteExit(ProjectViewModel? project)
+        public async Task ExecuteExit(ProjectViewModel? project)
         {
             if (project is not null)
             {
-                ExecuteCloseProject(project);
+                await ExecuteCloseProject(project);
             }
 
             RequestExitApp?.Invoke();
         }
 
-        public void ExecuteSaveProject(ProjectViewModel? project)
+        public async Task ExecuteSaveProject(ProjectViewModel? project)
         { }
 
-        public void ExecuteAddAssembly(ProjectViewModel? project)
-        { }
+        public async Task ExecuteAddAssembly(ProjectViewModel? project)
+        {
 
-        public void ExecuteCloseProject(ProjectViewModel? project)
+        }
+
+        public async Task ExecuteCloseProject(ProjectViewModel? project)
         {
             if (project is null) return;
 
-            Task.Run(async () =>
+            if (project.IsDirty)
             {
-                if (project.IsDirty)
-                {
-                    await project.SaveAsync();
-                }
+                await project.SaveAsync();
+            }
 
-                project.TryDispose();
-            }).ConfigureAwait(true)
-                .GetAwaiter()
-                .GetResult();
+            project.TryDispose();
         }
 
-        public void ExecuteNewProject(MainViewModel? viewModel)
+        public async Task ExecuteNewProject(MainViewModel? viewModel)
+        {
+            var result = await DialogService.GetNewProjectName();
+            if (result.dialogResult == ContentDialogResult.Secondary) return;
+
+            if (viewModel?.Project is not null && viewModel.Project.IsDirty)
+            {
+                await ExecuteCloseProject(viewModel.Project);
+            }
+
+            var project = App.Host.Services.GetRequiredService<ProjectViewModel>();
+
+            project.Name = result.name;
+
+            viewModel.Project = project;
+        }
+
+        public async Task ExecuteOpenProject(MainViewModel? viewModel)
         {
             if (viewModel?.Project is not null && viewModel.Project.IsDirty)
             {
-                ExecuteCloseProject(viewModel.Project);
+                await ExecuteCloseProject(viewModel.Project);
             }
 
-            viewModel.Project = App.Host.Services.GetRequiredService<ProjectViewModel>();
-        }
+            var result = await OpenAsync();
 
-        public void ExecuteOpenProject(MainViewModel? viewModel)
-        {
-            if (viewModel?.Project is not null && viewModel.Project.IsDirty)
-            {
-                ExecuteCloseProject(viewModel.Project);
-            }
-
-            Task.Run(async () =>
-            {
-                var result = await OpenAsync();
-
-                viewModel.Project = result.project;
-            }).ConfigureAwait(true)
-                .GetAwaiter()
-                .GetResult();
+            viewModel.Project = result.project;
         }
 
 

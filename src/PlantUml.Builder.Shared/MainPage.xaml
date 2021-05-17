@@ -1,13 +1,20 @@
-
 <Page x:Class="PlantUml.Builder.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:PlantUml.Builder"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="using:PlantUml.Builder.ViewModels"
       mc:Ignorable="d"
       >
-
+    <Page.Resources>
+        <DataTemplate x:DataType="viewModels:TextInputViewModel" x:Key="TextInputContent">
+            <StackPanel>
+                <TextBlock Text="{Binding Question, Mode=OneWay}" Style="{ThemeResource SubheaderTextBlockStyle}" />
+                <TextBox Text="{Binding Answer, Mode=TwoWay}" />
+            </StackPanel>
+        </DataTemplate>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -35,10 +42,18 @@
                         </MenuFlyoutItem>
                         <MenuFlyoutItem Command="{x:Bind ViewModel.Commands.SaveProject}"
                                         CommandParameter="{x:Bind ViewModel.Project, Mode=OneWay}"
-                                        Text="SaveAsync Project"
+                                        Text="Save Project"
                                         >
                             <MenuFlyoutItem.KeyboardAccelerators>
                                 <KeyboardAccelerator Key="S" Modifiers="Control" />
+                            </MenuFlyoutItem.KeyboardAccelerators>
+                        </MenuFlyoutItem>
+                        <MenuFlyoutItem Command="{x:Bind ViewModel.Commands.CloseProject}"
+                                        CommandParameter="{x:Bind ViewModel.Project, Mode=OneWay}"
+                                        Text="Close Project"
+                                        >
+                            <MenuFlyoutItem.KeyboardAccelerators>
+                                <KeyboardAccelerator Key="F4" Modifiers="Control" />
                             </MenuFlyoutItem.KeyboardAccelerators>
                         </MenuFlyoutItem>
                         <MenuFlyoutSeparator />
