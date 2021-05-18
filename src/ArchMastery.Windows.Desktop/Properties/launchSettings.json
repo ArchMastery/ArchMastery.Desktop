@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ArchMastery.Builder.Windows.Desktop": {
+      "commandName": "Project"
+    }
+  }
+}

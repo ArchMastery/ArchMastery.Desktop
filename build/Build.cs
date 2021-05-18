@@ -42,13 +42,17 @@ class Build : NukeBuild
     AbsolutePath SourceDirectory => RootDirectory / "src";
     AbsolutePath TestsDirectory => RootDirectory / "tests";
     AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
+    const string AppPackages = "**/AppPackages";
+    const string Appx = "**/Appx";
+    const string Symbols = "**/Symbols";
 
     Target Clean => _ => _
         .Before(Restore)
         .Executes(() =>
         {
-            SourceDirectory.GlobDirectories("**/bin", "**/obj").ForEach(DeleteDirectory);
-            TestsDirectory.GlobDirectories("**/bin", "**/obj").ForEach(DeleteDirectory);
+            SourceDirectory.GlobDirectories("**/bin", "**/obj").ForEach(EnsureCleanDirectory);
+            TestsDirectory.GlobDirectories("**/bin", "**/obj").ForEach(EnsureCleanDirectory);
+            RootDirectory.GlobDirectories(AppPackages, Appx, Symbols).ForEach(EnsureCleanDirectory);
             EnsureCleanDirectory(ArtifactsDirectory);
         });
 
