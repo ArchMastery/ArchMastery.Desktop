@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
     <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="ArchMastery.Reflector" Version="2021.514.0.42598" />
+    <PackageReference Include="PlantUml.Reflector" Version="2021.514.0.42598" />
     <PackageReference Include="Uno.WinUI.Skia.Wpf" Version="3.7.4" />
     <PackageReference Include="Uno.WinUI.RemoteControl" Version="3.7.4" Condition="'$(Configuration)'=='Debug'" />
   </ItemGroup>
@@ -21,6 +21,6 @@
     <Content Include="Assets\Fonts\uno-fluentui-assets.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ArchMastery.Builder.Skia.WPF\ArchMastery.Builder.Skia.WPF.csproj" />
+    <ProjectReference Include="..\ArchMastery.Skia.WPF\ArchMastery.Skia.WPF.csproj" />
   </ItemGroup>
 </Project>

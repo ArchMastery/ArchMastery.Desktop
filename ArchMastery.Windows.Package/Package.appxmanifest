@@ -8,12 +8,12 @@
 
   <Identity
     Name="c7b275ad-304d-484f-bd73-f89c5b773b1e"
-    Publisher="O=ArchMastery.Builder"
+    Publisher="O=ArchMastery"
     Version="1.0.0.0" />
 
   <Properties>
-	<DisplayName>ArchMastery.Builder</DisplayName>
-	<PublisherDisplayName>ArchMastery.Builder</PublisherDisplayName>
+	<DisplayName>ArchMastery</DisplayName>
+	<PublisherDisplayName>ArchMastery</PublisherDisplayName>
 	<Logo>Images\StoreLogo.png</Logo>
   </Properties>
 
@@ -31,8 +31,8 @@
       Executable="$targetnametoken$.exe"
       EntryPoint="$targetentrypoint$">
       <uap:VisualElements
-        DisplayName="ArchMastery.Builder"
-        Description="ArchMastery.Builder"
+        DisplayName="ArchMastery"
+        Description="ArchMastery"
         BackgroundColor="transparent"
         Square150x150Logo="Images\Square150x150Logo.png"
         Square44x44Logo="Images\Square44x44Logo.png">

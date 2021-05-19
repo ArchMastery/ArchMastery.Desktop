@@ -13,13 +13,13 @@ using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
-using ArchMastery.Builder.ViewModels;
+using ArchMastery.ViewModels;
 using System.Diagnostics;
-using ArchMastery.Builder.Services;
+using ArchMastery.Services;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace ArchMastery.Builder
+namespace ArchMastery
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -28,13 +28,16 @@ namespace ArchMastery.Builder
     {
         private MainViewModel _viewModel;
 
-        public MainViewModel ViewModel {
-            get => _viewModel;
-            set
-            {
-                if (value is null || value.Equals(_viewModel)) return;
+        public static DependencyProperty ViewModelProperty =
+            DependencyProperty.Register(nameof(ViewModel), typeof(MainViewModel), typeof(MainPage), new PropertyMetadata(null));
 
-                _viewModel = value;
+        public MainViewModel? ViewModel {
+            get => GetValue(MainPage.ViewModelProperty) as MainViewModel;
+            set 
+            {
+                if (value is null) return;
+
+                SetValue(ViewModelProperty, value);
             }
         }
 

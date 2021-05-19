@@ -35,7 +35,11 @@ class Build : NukeBuild
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
 
-    [Solution] readonly Solution Solution;
+    [Solution] Solution Solution {
+        get;
+        set;
+    }
+    
     [GitRepository] readonly GitRepository GitRepository;
     [GitVersion(Framework = "net5.0")] readonly GitVersion GitVersion;
 

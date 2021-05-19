@@ -4,7 +4,7 @@
 #nullable enable
 #endif
 
-namespace ArchMastery.Builder.ViewModels
+namespace ArchMastery.ViewModels
 {
     public class TextInputViewModel : ObservableObject
     {

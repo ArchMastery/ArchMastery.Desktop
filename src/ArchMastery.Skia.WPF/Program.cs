@@ -1,3 +1,3 @@
-namespace ArchMastery.Builder.Skia.Gtk
+namespace ArchMastery.Skia.Gtk
 {
 }

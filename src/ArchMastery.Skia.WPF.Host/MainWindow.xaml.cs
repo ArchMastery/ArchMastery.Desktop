@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 
 using Microsoft.Extensions.DependencyInjection;
 
-using ArchMastery.Builder.ViewModels;
+using ArchMastery.ViewModels;
 
-namespace ArchMastery.Builder.WPF.Host
+namespace ArchMastery.WPF.Host
 {
 	/// <summary>
 	/// Interaction logic for MainWindow.xaml
@@ -30,8 +30,8 @@ namespace ArchMastery.Builder.WPF.Host
 		{
 			InitializeComponent();
 
-			var wpfHost = new global::Uno.UI.Skia.Platform.WpfHost(Dispatcher, () => new Builder.App());
-			ViewModel = Builder.App.Host.Services.GetService<MainViewModel>();
+			var wpfHost = new global::Uno.UI.Skia.Platform.WpfHost(Dispatcher, () => new ArchMastery.App());
+			ViewModel = ArchMastery.App.Host.Services.GetService<MainViewModel>();
 			ViewModel.PropertyChanged += ViewModel_PropertyChanged;
 			root.Content = wpfHost;
 		}

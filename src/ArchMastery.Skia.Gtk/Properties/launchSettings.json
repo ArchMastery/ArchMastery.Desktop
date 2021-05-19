@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ArchMastery.Builder.Skia.Gtk": {
+    "ArchMastery.Skia.Gtk": {
       "commandName": "Project"
     }
   }

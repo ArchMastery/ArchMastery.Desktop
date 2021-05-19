@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace ArchMastery.Builder.WPF.Host
+namespace ArchMastery.WPF.Host
 {
 	/// <summary>
 	/// Interaction logic for App.xaml

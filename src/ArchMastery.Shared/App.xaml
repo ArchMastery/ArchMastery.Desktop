@@ -1,8 +1,8 @@
 <Application
-    x:Class="ArchMastery.Builder.App"
+    x:Class="ArchMastery.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ArchMastery.Builder">
+    xmlns:local="using:ArchMastery">
 	
 	<Application.Resources>
     		<XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />

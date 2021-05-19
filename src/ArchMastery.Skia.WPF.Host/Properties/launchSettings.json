@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ArchMastery.Builder.Skia.Wpf.Host": {
+    "ArchMastery.Skia.Wpf.Host": {
       "commandName": "Project"
     }
   }

@@ -18,7 +18,7 @@ using Microsoft.UI.Xaml.Navigation;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ArchMastery.Builder
+namespace ArchMastery
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.

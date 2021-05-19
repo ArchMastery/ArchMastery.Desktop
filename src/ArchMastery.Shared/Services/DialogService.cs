@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Windows.Storage;
-using ArchMastery.Builder.ViewModels;
+using ArchMastery.ViewModels;
 
 using Windows.Storage.Pickers;
 using Microsoft.UI.Xaml.Controls;
@@ -15,7 +15,7 @@ using Microsoft.UI.Xaml.Data;
 #nullable enable
 #endif
 
-namespace ArchMastery.Builder.Services
+namespace ArchMastery.Services
 {
     public class DialogService
     {

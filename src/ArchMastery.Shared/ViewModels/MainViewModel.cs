@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Windows.Storage;
 using Microsoft.Toolkit.Mvvm.ComponentModel;
 using Microsoft.Toolkit.Mvvm.Input;
-using ArchMastery.Builder.Services;
+using ArchMastery.Services;
 
 using Windows.Storage.Pickers;
 using Windows.System;
@@ -15,7 +15,7 @@ using Microsoft.UI.Xaml;
 #nullable enable
 #endif
 
-namespace ArchMastery.Builder.ViewModels
+namespace ArchMastery.ViewModels
 {
     public class MainViewModel : ObservableObject
     {

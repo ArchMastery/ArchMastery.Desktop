@@ -1,11 +1,11 @@
-<Page x:Class="ArchMastery.Builder.MainPage"
+<Page x:Class="ArchMastery.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:local="using:ArchMastery.Builder"
+      xmlns:local="using:ArchMastery"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:viewModels="using:ArchMastery.Builder.ViewModels"
-      xmlns:controls="using:ArchMastery.Builder.Controls"
+      xmlns:viewModels="using:ArchMastery.ViewModels"
+      xmlns:controls="using:ArchMastery.Controls"
       mc:Ignorable="d"
       >
     <Page.Resources>

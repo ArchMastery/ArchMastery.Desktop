@@ -9,7 +9,7 @@ using Microsoft.UI.Xaml.Controls;
 
 using Newtonsoft.Json;
 
-using ArchMastery.Builder.ViewModels;
+using ArchMastery.ViewModels;
 
 using Uno.Disposables;
 using Uno.Extensions;
@@ -24,7 +24,7 @@ using Buffer = System.Buffer;
 #nullable enable
 #endif
 
-namespace ArchMastery.Builder.Services
+namespace ArchMastery.Services
 {
     public class ProjectService
     {

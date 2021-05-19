@@ -3,33 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29920.165
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ArchMastery.Builder.Shared", "src\ArchMastery.Builder.Shared\ArchMastery.Builder.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ArchMastery.Shared", "src\ArchMastery.Shared\ArchMastery.Shared.shproj", "{6279C845-92F8-4333-AB99-3D213163593C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Builder.Skia.Gtk", "src\ArchMastery.Builder.Skia.Gtk\ArchMastery.Builder.Skia.Gtk.csproj", "{A5B8155A-118F-4794-B551-C6F3CF7E5411}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Skia.Gtk", "src\ArchMastery.Skia.Gtk\ArchMastery.Skia.Gtk.csproj", "{A5B8155A-118F-4794-B551-C6F3CF7E5411}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Builder.Skia.WPF", "src\ArchMastery.Builder.Skia.WPF\ArchMastery.Builder.Skia.WPF.csproj", "{54664B24-34BE-4FC1-A3CB-C5F0523F8042}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Skia.WPF", "src\ArchMastery.Skia.WPF\ArchMastery.Skia.WPF.csproj", "{54664B24-34BE-4FC1-A3CB-C5F0523F8042}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Builder.Skia.Wpf.Host", "src\ArchMastery.Builder.Skia.WPF.Host\ArchMastery.Builder.Skia.Wpf.Host.csproj", "{6CF284A4-22B1-4F05-97F4-F095C07A598E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Skia.Wpf.Host", "src\ArchMastery.Skia.WPF.Host\ArchMastery.Skia.Wpf.Host.csproj", "{6CF284A4-22B1-4F05-97F4-F095C07A598E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Builder.Windows.Desktop", "src\ArchMastery.Builder.Windows.Desktop\ArchMastery.Builder.Windows.Desktop.csproj", "{1AA13270-F438-4864-9435-54FD806E10EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ArchMastery.Windows.Desktop", "src\ArchMastery.Windows.Desktop\ArchMastery.Windows.Desktop.csproj", "{1AA13270-F438-4864-9435-54FD806E10EA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{0745D623-9486-41B5-8CC4-76C8D26F291F}"
 EndProject
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ArchMastery.Builder.Windows.Package", "ArchMastery.Builder.Windows.Package\ArchMastery.Builder.Windows.Package.wapproj", "{D7B5051A-E31E-418D-B2C2-4F109224E150}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "ArchMastery.Windows.Package", "ArchMastery.Windows.Package\ArchMastery.Windows.Package.wapproj", "{D7B5051A-E31E-418D-B2C2-4F109224E150}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4DC0A6B8-00CC-4E2C-A45B-3C633D0FBFB2}"
-	ProjectSection(SolutionItems) = preProject
-		src\GPS.WinUI3.PowerBar\GPS.WinUI3.PowerBar.csproj = src\GPS.WinUI3.PowerBar\GPS.WinUI3.PowerBar.csproj
-	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "uno", "uno", "{5D909DB1-3DDF-4EE6-92BF-33AB8C8E5A07}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Components", "Components", "{7CC56D27-7FAE-40DC-960B-F167B4BADE88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GPS.WinUI3.PowerBar", "src\GPS.WinUI3.PowerBar\GPS.WinUI3.PowerBar.csproj", "{470AA574-F0A4-462A-9965-B905BC61FD65}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		src\ArchMastery.Builder.Shared\ArchMastery.Builder.Shared.projitems*{1aa13270-f438-4864-9435-54fd806e10ea}*SharedItemsImports = 5
-		src\ArchMastery.Builder.Shared\ArchMastery.Builder.Shared.projitems*{54664b24-34be-4fc1-a3cb-c5f0523f8042}*SharedItemsImports = 5
-		src\ArchMastery.Builder.Shared\ArchMastery.Builder.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
-		src\ArchMastery.Builder.Shared\ArchMastery.Builder.Shared.projitems*{a5b8155a-118f-4794-b551-c6f3cf7e5411}*SharedItemsImports = 5
+		src\ArchMastery.Shared\ArchMastery.Shared.projitems*{1aa13270-f438-4864-9435-54fd806e10ea}*SharedItemsImports = 5
+		src\ArchMastery.Shared\ArchMastery.Shared.projitems*{54664b24-34be-4fc1-a3cb-c5f0523f8042}*SharedItemsImports = 5
+		src\ArchMastery.Shared\ArchMastery.Shared.projitems*{6279c845-92f8-4333-ab99-3d213163593c}*SharedItemsImports = 13
+		src\ArchMastery.Shared\ArchMastery.Shared.projitems*{a5b8155a-118f-4794-b551-c6f3cf7e5411}*SharedItemsImports = 5
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -319,6 +318,48 @@ Global
 		{D7B5051A-E31E-418D-B2C2-4F109224E150}.Release|x86.ActiveCfg = Release|x86
 		{D7B5051A-E31E-418D-B2C2-4F109224E150}.Release|x86.Build.0 = Release|x86
 		{D7B5051A-E31E-418D-B2C2-4F109224E150}.Release|x86.Deploy.0 = Release|x86
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|ARM.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|x64.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Debug|x86.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|Any CPU.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|Any CPU.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|ARM.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|ARM.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|ARM64.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|ARM64.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|iPhone.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|iPhone.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|x64.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|x64.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|x86.ActiveCfg = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Nuke|x86.Build.0 = Debug|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|ARM.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|ARM.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|ARM64.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|iPhone.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|x64.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|x64.Build.0 = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|x86.ActiveCfg = Release|Any CPU
+		{470AA574-F0A4-462A-9965-B905BC61FD65}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -329,6 +370,8 @@ Global
 		{54664B24-34BE-4FC1-A3CB-C5F0523F8042} = {4DC0A6B8-00CC-4E2C-A45B-3C633D0FBFB2}
 		{6CF284A4-22B1-4F05-97F4-F095C07A598E} = {4DC0A6B8-00CC-4E2C-A45B-3C633D0FBFB2}
 		{1AA13270-F438-4864-9435-54FD806E10EA} = {4DC0A6B8-00CC-4E2C-A45B-3C633D0FBFB2}
+		{7CC56D27-7FAE-40DC-960B-F167B4BADE88} = {4DC0A6B8-00CC-4E2C-A45B-3C633D0FBFB2}
+		{470AA574-F0A4-462A-9965-B905BC61FD65} = {7CC56D27-7FAE-40DC-960B-F167B4BADE88}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C7433AE2-B1A0-4C1A-887E-5CAA7AAF67A6}

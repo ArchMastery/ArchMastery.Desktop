@@ -14,8 +14,8 @@
   <mp:PhoneIdentity PhoneProductId="031d2620-877f-48f2-ad66-5ccb318f1a81" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>ArchMastery.Builder</DisplayName>
-    <PublisherDisplayName>ArchMastery.Builder</PublisherDisplayName>
+    <DisplayName>ArchMastery</DisplayName>
+    <PublisherDisplayName>ArchMastery</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 
@@ -30,12 +30,12 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="ArchMastery.Builder.App">
+      EntryPoint="ArchMastery.App">
       <uap:VisualElements
-        DisplayName="ArchMastery.Builder"
+        DisplayName="ArchMastery"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="ArchMastery.Builder"
+        Description="ArchMastery"
         BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png"/>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />

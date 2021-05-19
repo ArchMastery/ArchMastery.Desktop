@@ -6,11 +6,11 @@ using Microsoft.Toolkit.Mvvm.ComponentModel;
 
 using Newtonsoft.Json;
 
-using ArchMastery.Builder.Services;
+using ArchMastery.Services;
 
 using Windows.Storage;
 
-namespace ArchMastery.Builder.ViewModels
+namespace ArchMastery.ViewModels
 {
     public class ProjectViewModel : ObservableObject
     {

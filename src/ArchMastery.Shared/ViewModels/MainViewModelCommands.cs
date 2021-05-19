@@ -1,12 +1,12 @@
 ﻿using Microsoft.Toolkit.Mvvm.Input;
 
-using ArchMastery.Builder.Services;
+using ArchMastery.Services;
 
 #if !UAP
 #nullable enable
 #endif
 
-namespace ArchMastery.Builder.ViewModels
+namespace ArchMastery.ViewModels
 {
     public class MainViewModelCommands
     {

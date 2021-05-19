@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArchMastery.Builder.WPF.Host.Properties
+namespace ArchMastery.WPF.Host.Properties
 {
 
 
@@ -44,7 +44,7 @@ namespace ArchMastery.Builder.WPF.Host.Properties
 			{
 				if ((resourceMan == null))
 				{
-					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ArchMastery.Builder.WPF.Host.Properties.Resources", typeof(Resources).Assembly);
+					global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("ArchMastery.WPF.Host.Properties.Resources", typeof(Resources).Assembly);
 					resourceMan = temp;
 				}
 				return resourceMan;

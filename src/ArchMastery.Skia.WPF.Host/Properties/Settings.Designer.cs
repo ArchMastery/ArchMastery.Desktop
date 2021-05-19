@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArchMastery.Builder.WPF.Host.Properties
+namespace ArchMastery.WPF.Host.Properties
 {
 
 

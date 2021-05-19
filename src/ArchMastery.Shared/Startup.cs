@@ -4,12 +4,12 @@ using System.Text;
 
 using Microsoft.Extensions.DependencyInjection;
 
-using ArchMastery.Builder.Services;
-using ArchMastery.Builder.ViewModels;
+using ArchMastery.Services;
+using ArchMastery.ViewModels;
 
-using static ArchMastery.Builder.ViewModels.MainViewModel;
+using static ArchMastery.ViewModels.MainViewModel;
 
-namespace ArchMastery.Builder
+namespace ArchMastery
 {
     public static class Startup
     {

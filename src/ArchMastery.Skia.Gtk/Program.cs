@@ -2,7 +2,7 @@ using System;
 using GLib;
 using Uno.UI.Runtime.Skia;
 
-namespace ArchMastery.Builder.Skia.Gtk
+namespace ArchMastery.Skia.Gtk
 {
 	class Program
 	{
